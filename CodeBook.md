@@ -112,10 +112,86 @@ The viable combination of the various signales mentioned above and their compute
 
 # Anlysis Design
 
-##For the GetData Course project the following were the requirements.
+## GetData Course project requirements.
 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 3. Uses descriptive activity names to name the activities in the data set
 4. Appropriately labels the data set with descriptive variable names. 
 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+
+## Brief Analysis
+
+From the requirements it is clear that we are only interested in a few of the meassurements associated with the subject ( 1- 30) and 
+activity( 1 -6)
+The measurements that are of interest to us are those involving mean and std. The comprehensive list of all these variables is given below.
+Also the requirements of the project make it clear that only the data in the the X_test/train.txt ,subject_test/train.txt and y_test/train.txt  along with the features.txt and activity_labels.txt.
+The data in the Inertial Signals direcory that are conatined in the 9 files listed above as 128 element reading are not needed for this analysis
+The list of required features are the 68 features listed below.
+* tBodyAcc-mean()-X
+* tBodyAcc-mean()-Y
+* tBodyAcc-mean()-Z
+* tBodyAcc-std()-X
+* tBodyAcc-std()-Y
+* tBodyAcc-std()-Z
+* tGravityAcc-mean()-X
+* tGravityAcc-mean()-Y
+* tGravityAcc-mean()-Z
+* tGravityAcc-std()-X
+* tGravityAcc-std()-Y
+* tGravityAcc-std()-Z
+* tBodyAccJerk-mean()-X
+* tBodyAccJerk-mean()-Y
+* tBodyAccJerk-mean()-Z
+* tBodyAccJerk-std()-X
+* tBodyAccJerk-std()-Y
+* tBodyAccJerk-std()-Z
+* tBodyGyro-mean()-X
+* tBodyGyro-mean()-Y
+* tBodyGyro-mean()-Z
+* tBodyGyro-std()-X
+* tBodyGyro-std()-Y
+* tBodyGyro-std()-Z
+* tBodyGyroJerk-mean()-X
+* tBodyGyroJerk-mean()-Y
+* tBodyGyroJerk-mean()-Z
+* tBodyGyroJerk-std()-X
+* tBodyGyroJerk-std()-Y
+* tBodyGyroJerk-std()-Z
+* tBodyAccMag-mean()
+* tBodyAccMag-std()
+* tBodyAccMag-mad()
+* tGravityAccMag-mean()
+* tGravityAccMag-std()
+* tBodyAccJerkMag-mean()
+* tBodyAccJerkMag-std()
+* tBodyGyroMag-mean()
+* tBodyGyroMag-std()
+* tBodyGyroJerkMag-mean()
+* tBodyGyroJerkMag-std()
+* fBodyAcc-mean()-X
+* fBodyAcc-mean()-Y
+* fBodyAcc-mean()-Z
+* fBodyAccJerk-mean()-X
+* fBodyAccJerk-mean()-Y
+* fBodyAccJerk-mean()-Z
+* fBodyAccJerk-std()-X
+* fBodyAccJerk-std()-Y
+* fBodyAccJerk-std()-Z
+* fBodyGyro-mean()-X
+* fBodyGyro-mean()-Y
+* fBodyGyro-mean()-Z
+* fBodyGyro-std()-X
+* fBodyGyro-std()-Y
+* fBodyGyro-std()-Z
+* fBodyAccMag-mean()
+* fBodyAccMag-std()
+* fBodyBodyAccJerkMag-mean()
+* fBodyBodyAccJerkMag-std()
+* fBodyBodyGyroMag-mean()
+* fBodyBodyGyroMag-std()
+* fBodyBodyGyroJerkMag-mean()
+* yBodyGyroJerkMag-std()
+ 
+
