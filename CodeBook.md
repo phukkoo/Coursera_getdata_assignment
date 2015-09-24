@@ -2,9 +2,6 @@
 title: "Coursera GetData Project"
 author: "Priti Hukkoo"
 date: "08/24/2015"
-output:
-  html_document:
-    keep_md: yes
 ---
 
 ## Project Description
