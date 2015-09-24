@@ -44,7 +44,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 * 'test/Inertial Signals/body_acc_x_test.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration.  THis has standard gravity units 'g'.Every row shows a 128 element vector. The same description applies for the 'body_acc_x_test.txt' and 'body_acc_z_test.txt' files for the Y and Z axis.
 * 'test/Inertial Signals/body_gyro_x_test.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. The same description applies for the body_gyro_z_test.txt and body_gyro_y_test.txt.
 
-###Notes:
+###Notes
 *  Features are normalized and bounded within [-1,1].
 *  Each feature vector is a row on the text file.
 
@@ -99,7 +99,7 @@ The set of variables that were estimated from these signals are:
 * bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
 * angle(): Angle between to vectors.
 
-* Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
 * gravityMean
 * tBodyAccMean
@@ -108,3 +108,14 @@ The set of variables that were estimated from these signals are:
 * tBodyGyroJerkMean
 
 The viable combination of the various signales mentioned above and their computed mesures like mean , std etc is what makes up the complete list of variables of each feature vectorif 561 elements and are present in the X_test.txt and X_train.txt files and are also  available in 'features.txt'
+
+
+
+# Anlysis Design
+
+For the GetData Course project the following were the requirements.
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
