@@ -199,18 +199,49 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
 4. The readings data got from y_test/train.txt will be filtered out only to give us those reading that are associated with means and standard deviations. Hence the element( column ) size will come down from 561 to 68 
 5. I have decided to go with the feature name which have been listed above , as the descriptive variable name. The main reason being that they are quite long and have I made it more descriptive they may not be any more useful. The current feature names are not too elaborate or short and according to me serve thepurpose and are in line with the tidy data principles. 
 6. Once we have the data is the above format , it is grouped_by the Subject and Activity to get the average values for the above measurements. All this is achieved by using the dplyr library . 
-7. Once 180 observation with the required num of observation are got, it is melted down using the gather function from the tidyr package to get a tidy_data txt file in the narrow format of 11880 rows X 4 columns ( Subject, Activity, Measure ad Value)
+7. Once 180 observation with the required num of observation are got, it is melted down using the gather function from the tidyr package to get a tidy_data txt file in the narrow format of 11880 rows X 4 columns ( Subject, Measure, ACtivity ad Value)
 
 
 ##Description of the variables in the tiny_data.txt file
  The tidy_data.txt file is in the narrow format  and 
 * has 11880 rows X 4 columns ( Subject, Activity, Measure and Value)
 * The first column/variable is the Subject and can have values from 1 to 30
-* The second column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING)
-* The third column/variable  is the  type of  Measure and could hold any of valid feature names listed above like tBodyAcc-mean()-X, fBodyBodyGyroMag-mean() etc.
+* The second column/variable  is the  type of  Measure and could hold any of valid feature names listed above like tBodyAcc-mean()-X, fBodyBodyGyroMag-mean() etc.
+* The third column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING)
 * The last column/variable is the value of the measure specified in column 3. It depicts the average value of the measure from column 3 for that subject specified in column 1 and activity specified in column 2.
 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
+I have purposely put it in the following format so it is more tidy and readable. The output looks like this
+Subject           Measure           Activity      Average
+1        1 tBodyAcc-mean()-X            WALKING  0.277330759
+2        1 tBodyAcc-mean()-X   WALKING_UPSTAIRS  0.255461690
+3        1 tBodyAcc-mean()-X WALKING_DOWNSTAIRS  0.289188320
+4        1 tBodyAcc-mean()-X            SITTING  0.261237565
+5        1 tBodyAcc-mean()-X           STANDING  0.278917629
+6        1 tBodyAcc-mean()-X             LAYING  0.221598244
+7        1 tBodyAcc-mean()-Y            WALKING -0.017383819
+8        1 tBodyAcc-mean()-Y   WALKING_UPSTAIRS -0.023953149
+9        1 tBodyAcc-mean()-Y WALKING_DOWNSTAIRS -0.009918505
+10       1 tBodyAcc-mean()-Y            SITTING -0.001308288
+11       1 tBodyAcc-mean()-Y           STANDING -0.016137590
+12       1 tBodyAcc-mean()-Y             LAYING -0.040513953
+13       1 tBodyAcc-mean()-Z            WALKING -0.111148104
+14       1 tBodyAcc-mean()-Z   WALKING_UPSTAIRS -0.097302002
+15       1 tBodyAcc-mean()-Z WALKING_DOWNSTAIRS -0.107566191
+16       1 tBodyAcc-mean()-Z            SITTING -0.104544182
+17       1 tBodyAcc-mean()-Z           STANDING -0.110601818
+18       1 tBodyAcc-mean()-Z             LAYING -0.113203554
+19       1  tBodyAcc-std()-X            WALKING -0.283740259
+20       1  tBodyAcc-std()-X   WALKING_UPSTAIRS -0.354708025
+21       1  tBodyAcc-std()-X WALKING_DOWNSTAIRS  0.030035338
+22       1  tBodyAcc-std()-X            SITTING -0.977229008
+23       1  tBodyAcc-std()-X           STANDING -0.995759902
+24       1  tBodyAcc-std()-X             LAYING -0.928056469
+25       1  tBodyAcc-std()-Y            WALKING  0.114461337
+26       1  tBodyAcc-std()-Y   WALKING_UPSTAIRS -0.002320265
+27       1  tBodyAcc-std()-Y WALKING_DOWNSTAIRS -0.031935943
+28       1  tBodyAcc-std()-Y            SITTING -0.922618642
+29       1  tBodyAcc-std()-Y           STANDING -0.973190056
+30       1  tBodyAcc-std()-Y             LAYING -0.836827406
 
 ###Variable 1 (repeat this section for all variables in the dataset)
 Short description of what the variable describes.
