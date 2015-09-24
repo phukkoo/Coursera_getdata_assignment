@@ -197,8 +197,9 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
    All this data from test/train will be merged to form one set of data.
 3. Meta data assocaited with the features and activities will be read features.txt and activity_labels.txt. 
 4. The readings data got from y_test/train.txt will be filtered out only to give us those reading that are associated with means and standard deviations. Hence the element( column ) size will come down from 561 to 68 
-5. Once we have the data is the above format , it is grouped_by the Subject and Activity to get the average values for the above measurements. All this is achieved by using the dplyr library . 
-6. Once 180 observation with the required num of observation are got, it is melted down using the gather function from the tidyr package to get a tidy_data txt file in the narrow format of 11880 rows X 4 columns ( Subject, Activity, Measure ad Value)
+5. I have decided to go with the feature name which have been listed above , as the descriptive variable name. The main reason being that they are quite long and have I made it more descriptive they may not be any more useful. The current feature names are not too elaborate or short and according to me serve thepurpose and are in line with the tidy data principles. 
+6. Once we have the data is the above format , it is grouped_by the Subject and Activity to get the average values for the above measurements. All this is achieved by using the dplyr library . 
+7. Once 180 observation with the required num of observation are got, it is melted down using the gather function from the tidyr package to get a tidy_data txt file in the narrow format of 11880 rows X 4 columns ( Subject, Activity, Measure ad Value)
 
 
 ##Description of the variables in the tiny_data.txt file
@@ -206,7 +207,8 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
 * has 11880 rows X 4 columns ( Subject, Activity, Measure and Value)
 * The first column/variable is the Subject and can have values from 1 to 30
 * The second column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING)
-* The third column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING)
+* The third column/variable  is the  type of  Measure and could hold any of valid feature names listed above like tBodyAcc-mean()-X, fBodyBodyGyroMag-mean() etc.
+* The last column/variable is the value of the measure specified in column 3. It depicts the average value of the measure from column 3 for that subject specified in column 1 and activity specified in column 2.
 
 (you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
 
