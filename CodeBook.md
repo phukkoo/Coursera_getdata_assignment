@@ -5,7 +5,7 @@ date: "08/24/2015"
 ---
 
 ## Project Description
- we have been given a data set from Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
+ We have been given a data set from Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
 
  GetData Course project requirements.
 
@@ -91,6 +91,7 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 * tBodyAccJerkMean
 
 ###Notes on the original (raw) data 
+The raw data set provided to us contains the following files.
 * 'README.txt'
 * 'features_info.txt': Shows information about the variables used on the feature vector.
 * 'features.txt': List of all features.
@@ -111,7 +112,7 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 ###Guide to create the tidy data file
 
 From the requirements it is clear that we are only interested in a few of the meassurements associated with the subject ( 1- 30) and 
-activity( 1 -6)
+activity( 1 -6).
 The measurements that are of interest to us are those involving mean and std. The comprehensive list of all these variables is given below.
 Also the requirements of the project make it clear that only the data in the the X_test/train.txt ,subject_test/train.txt and y_test/train.txt  along with the features.txt and activity_labels.txt.
 The data in the Inertial Signals direcory that are conatined in the 9 files listed above as 128 element reading are not needed for this analysis
@@ -186,7 +187,18 @@ The list of required features are the 68 features listed below.
  
 
 ###Cleaning of the data
-Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
+In order to process the data and get the required tidy_data.txt as the outcome , we need to do the following.
+
+1. Download the data from the given url https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+2. Read data from train and test set . They will be 3 files in each of the test/train directories that we will be getting the data from.
+   * X_test/train.txt
+   * y_test/train.txt
+   * subject_test/train.txt
+   All this data from test/train will be merged to form one set of data.
+3. Meta data assocaited with the features and activities will be read features.txt and activity_labels.txt.
+4. The readnings data got from y_test/train.txt will be filtered out only to give us those reading that are associated with means and standard deviations. Hence the element( column ) size will come doen from 561 to 68 
+5. 
+
 
 ##Description of the variables in the tiny_data.txt file
 General description of the file including:
