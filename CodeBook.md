@@ -191,20 +191,22 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
 
 1. Download the data from the given url https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 2. Read data from train and test set . They will be 3 files in each of the test/train directories that we will be getting the data from.
-   * X_test/train.txt
-   * y_test/train.txt
-   * subject_test/train.txt
+   * X_test/train.txt ( Readings/Measurements data)
+   * y_test/train.txt ( Activity data)
+   * subject_test/train.txt ( Subject data)
    All this data from test/train will be merged to form one set of data.
-3. Meta data assocaited with the features and activities will be read features.txt and activity_labels.txt.
-4. The readnings data got from y_test/train.txt will be filtered out only to give us those reading that are associated with means and standard deviations. Hence the element( column ) size will come doen from 561 to 68 
-5. 
+3. Meta data assocaited with the features and activities will be read features.txt and activity_labels.txt. 
+4. The readings data got from y_test/train.txt will be filtered out only to give us those reading that are associated with means and standard deviations. Hence the element( column ) size will come down from 561 to 68 
+5. Once we have the data is the above format , it is grouped_by the Subject and Activity to get the average values for the above measurements. All this is achieved by using the dplyr library . 
+6. Once 180 observation with the required num of observation are got, it is melted down using the gather function from the tidyr package to get a tidy_data txt file in the narrow format of 11880 rows X 4 columns ( Subject, Activity, Measure ad Value)
 
 
 ##Description of the variables in the tiny_data.txt file
-General description of the file including:
- - Dimensions of the dataset
- - Summary of the data
- - Variables present in the dataset
+ The tidy_data.txt file is in the narrow format  and 
+* has 11880 rows X 4 columns ( Subject, Activity, Measure and Value)
+* The first column/variable is the Subject and can have values from 1 to 30
+* The second column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING)
+* The third column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING)
 
 (you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
 
