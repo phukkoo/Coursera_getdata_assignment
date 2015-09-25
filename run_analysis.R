@@ -87,6 +87,7 @@ narrow_tidy_data <- wide_tidy_data %>%
         select(Subject, Measure, Activity, Average)  %>%
         arrange(Subject, Measure)
 
+# This results in a tidy narrow format txt output file with 11880 rows and 4 columns which are  Subject, Measure , Activity and value of Measure
 # here we write out the tidy_data into a txt file.
 write.table(narrow_tidy_data, "./getdata/UCI HAR Dataset/tidy_data.txt", row.name=FALSE)
 
