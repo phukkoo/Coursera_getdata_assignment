@@ -211,9 +211,13 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
 * The last column/variable is the value of the measure specified in column 3. It depicts the average value of the measure from column 3 for that subject specified in column 1 and activity specified in column 2.
 
 I have purposely put it in the following format so it is more tidy and readable. The output looks like this
+--------------------------------------------------------------
 Subject           Measure           Activity      Average
+--------------------------------------------------------------
 1        1 tBodyAcc-mean()-X            WALKING  0.277330759
+--------------------------------------------------------------
 2        1 tBodyAcc-mean()-X   WALKING_UPSTAIRS  0.255461690
+--------------------------------------------------------------
 3        1 tBodyAcc-mean()-X WALKING_DOWNSTAIRS  0.289188320
 4        1 tBodyAcc-mean()-X            SITTING  0.261237565
 5        1 tBodyAcc-mean()-X           STANDING  0.278917629
