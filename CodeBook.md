@@ -209,11 +209,7 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
 * The third column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING). This too is of type factor.
 * The last column/variable is the value of the measure specified in column 3. It depicts the average value of the measure from column 3 for that subject specified in column 1 and activity specified in column 2.This has type numeric.
 
-I have put it in the following format so it is more tidy and readable. The output looks like this
-Table Header  | Second Header
- ------------- | -------------
- Table Cell    | Cell 2
- Cell 3        | Cell 4
+I have put it in the following format so it is more tidy and readable. 
 
 ##Sources
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.

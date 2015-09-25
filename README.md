@@ -24,12 +24,8 @@ Repositoty contains peer-assessed Coursera's Getting-and-Cleaning-Data Course Pr
     * grouped the above data frame using grouped_by ( subject, activity)
     * Then in each of the resulting groups find the average of the variables by using summarize.
     
-11.   This will result n 180 rows of observation with 68 columns. ( 30 subjects times 6 activities and 66 measurements).
+11. This will result n 180 rows of observation with 68 columns. ( 30 subjects times 6 activities and 66 measurements).
     Since reading 68 columns my be a bit messy, will tidy this further by gathering(melting) the 66 columns to rows hence Reshaping wide format to long narrow format.
     The gather() function will take multiple columns and collapse them into key-value pairs, duplicating all other columns as needed.
     * then rearranging coumns so we see Subject, Measurement , Activity and Value.
-	Table Header  | Second Header
- 	------------- | -------------
-	 Table Cell    | Cell 2
-	 Cell 3        | Cell 4
 12. Uses `write.table` to save the final tidy dataset as a CSV file names ./data/tidydata.txt. File can be read back with `read.table("./data/tidydata.txt")`
