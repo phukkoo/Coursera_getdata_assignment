@@ -211,85 +211,70 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
 * The last column/variable is the value of the measure specified in column 3. It depicts the average value of the measure from column 3 for that subject specified in column 1 and activity specified in column 2.
 
 I have purposely put it in the following format so it is more tidy and readable. The output looks like this
-"Subject" "Measure" "Activity" "Average"
-1 "tBodyAcc-mean()-X" "WALKING" 0.277330758736842
-1 "tBodyAcc-mean()-X" "WALKING_UPSTAIRS" 0.255461689622641
-1 "tBodyAcc-mean()-X" "WALKING_DOWNSTAIRS" 0.289188320408163
-1 "tBodyAcc-mean()-X" "SITTING" 0.261237565425532
-1 "tBodyAcc-mean()-X" "STANDING" 0.278917629056604
-1 "tBodyAcc-mean()-X" "LAYING" 0.22159824394
-1 "tBodyAcc-mean()-Y" "WALKING" -0.0173838185273684
-1 "tBodyAcc-mean()-Y" "WALKING_UPSTAIRS" -0.0239531492643396
-1 "tBodyAcc-mean()-Y" "WALKING_DOWNSTAIRS" -0.00991850461020408
-1 "tBodyAcc-mean()-Y" "SITTING" -0.00130828765170213
-1 "tBodyAcc-mean()-Y" "STANDING" -0.0161375901037736
-1 "tBodyAcc-mean()-Y" "LAYING" -0.0405139534294
-1 "tBodyAcc-mean()-Z" "WALKING" -0.111148103547368
-1 "tBodyAcc-mean()-Z" "WALKING_UPSTAIRS" -0.0973020020943396
-1 "tBodyAcc-mean()-Z" "WALKING_DOWNSTAIRS" -0.107566190908163
-1 "tBodyAcc-mean()-Z" "SITTING" -0.104544182255319
-1 "tBodyAcc-mean()-Z" "STANDING" -0.110601817735849
-1 "tBodyAcc-mean()-Z" "LAYING" -0.11320355358
-1 "tBodyAcc-std()-X" "WALKING" -0.283740258842105
-1 "tBodyAcc-std()-X" "WALKING_UPSTAIRS" -0.35470802509434
-1 "tBodyAcc-std()-X" "WALKING_DOWNSTAIRS" 0.0300353383483878
-1 "tBodyAcc-std()-X" "SITTING" -0.977229008297872
-1 "tBodyAcc-std()-X" "STANDING" -0.995759901509434
-1 "tBodyAcc-std()-X" "LAYING" -0.9280564692
-1 "tBodyAcc-std()-Y" "WALKING" 0.114461336747368
-1 "tBodyAcc-std()-Y" "WALKING_UPSTAIRS" -0.00232026501698113
-1 "tBodyAcc-std()-Y" "WALKING_DOWNSTAIRS" -0.0319359434489796
-1 "tBodyAcc-std()-Y" "SITTING" -0.922618641914894
-1 "tBodyAcc-std()-Y" "STANDING" -0.973190056415094
-1 "tBodyAcc-std()-Y" "LAYING" -0.83682740562
-1 "tBodyAcc-std()-Z" "WALKING" -0.260027902210526
-1 "tBodyAcc-std()-Z" "WALKING_UPSTAIRS" -0.0194792388471698
-1 "tBodyAcc-std()-Z" "WALKING_DOWNSTAIRS" -0.230434213204082
-1 "tBodyAcc-std()-Z" "SITTING" -0.93958629106383
-1 "tBodyAcc-std()-Z" "STANDING" -0.979775876981132
-1 "tBodyAcc-std()-Z" "LAYING" -0.826061401628
-1 "tGravityAcc-mean()-X" "WALKING" 0.935223201473684
-1 "tGravityAcc-mean()-X" "WALKING_UPSTAIRS" 0.89335109754717
-1 "tGravityAcc-mean()-X" "WALKING_DOWNSTAIRS" 0.931874418979592
-1 "tGravityAcc-mean()-X" "SITTING" 0.831509933404255
-1 "tGravityAcc-mean()-X" "STANDING" 0.942952000377358
-1 "tGravityAcc-mean()-X" "LAYING" -0.24888179828:w
-
 
 Subject     |      Measure        |   Activity      |Average
 --------------------------------------------------------------
-1        1 | tBodyAcc-mean()-X |            WALKING  | 0.277330759
+        1 | tBodyAcc-mean()-X |            WALKING  | 0.277330759
 --------------------------------------------------------------
-2        1 tBodyAcc-mean()-X   WALKING_UPSTAIRS  0.255461690
+        1 tBodyAcc-mean()-X   | WALKING_UPSTAIRS  | 0.255461690
 --------------------------------------------------------------
-3        1 tBodyAcc-mean()-X WALKING_DOWNSTAIRS  0.289188320
-4        1 tBodyAcc-mean()-X            SITTING  0.261237565
-5        1 tBodyAcc-mean()-X           STANDING  0.278917629
-6        1 tBodyAcc-mean()-X             LAYING  0.221598244
-7        1 tBodyAcc-mean()-Y            WALKING -0.017383819
-8        1 tBodyAcc-mean()-Y   WALKING_UPSTAIRS -0.023953149
-9        1 tBodyAcc-mean()-Y WALKING_DOWNSTAIRS -0.009918505
-10       1 tBodyAcc-mean()-Y            SITTING -0.001308288
-11       1 tBodyAcc-mean()-Y           STANDING -0.016137590
-12       1 tBodyAcc-mean()-Y             LAYING -0.040513953
-13       1 tBodyAcc-mean()-Z            WALKING -0.111148104
-14       1 tBodyAcc-mean()-Z   WALKING_UPSTAIRS -0.097302002
-15       1 tBodyAcc-mean()-Z WALKING_DOWNSTAIRS -0.107566191
-16       1 tBodyAcc-mean()-Z            SITTING -0.104544182
-17       1 tBodyAcc-mean()-Z           STANDING -0.110601818
-18       1 tBodyAcc-mean()-Z             LAYING -0.113203554
-19       1  tBodyAcc-std()-X            WALKING -0.283740259
-20       1  tBodyAcc-std()-X   WALKING_UPSTAIRS -0.354708025
-21       1  tBodyAcc-std()-X WALKING_DOWNSTAIRS  0.030035338
-22       1  tBodyAcc-std()-X            SITTING -0.977229008
-23       1  tBodyAcc-std()-X           STANDING -0.995759902
-24       1  tBodyAcc-std()-X             LAYING -0.928056469
-25       1  tBodyAcc-std()-Y            WALKING  0.114461337
-26       1  tBodyAcc-std()-Y   WALKING_UPSTAIRS -0.002320265
-27       1  tBodyAcc-std()-Y WALKING_DOWNSTAIRS -0.031935943
-28       1  tBodyAcc-std()-Y            SITTING -0.922618642
-29       1  tBodyAcc-std()-Y           STANDING -0.973190056
-30       1  tBodyAcc-std()-Y             LAYING -0.836827406
+        1| tBodyAcc-mean()-X| WALKING_DOWNSTAIRS|  0.289188320
+--------------------------------------------------------------
+        1 | tBodyAcc-mean()-X      |       SITTING  | 0.261237565
+--------------------------------------------------------------
+        1 | tBodyAcc-mean()-X  |          STANDING |  0.278917629
+--------------------------------------------------------------
+        1 | tBodyAcc-mean()-X        |      LAYING |  0.221598244
+--------------------------------------------------------------
+        1 | tBodyAcc-mean()-Y      |       WALKING | -0.017383819
+--------------------------------------------------------------
+        1 | tBodyAcc-mean()-Y  |  WALKING_UPSTAIRS | -0.023953149
+--------------------------------------------------------------
+        1 | tBodyAcc-mean()-Y | WALKING_DOWNSTAIRS | -0.009918505
+--------------------------------------------------------------
+       1 tBodyAcc-mean()-Y            SITTING -0.001308288
+--------------------------------------------------------------
+       1 tBodyAcc-mean()-Y           STANDING -0.016137590
+--------------------------------------------------------------
+       1 tBodyAcc-mean()-Y             LAYING -0.040513953
+--------------------------------------------------------------
+       1 tBodyAcc-mean()-Z            WALKING -0.111148104
+--------------------------------------------------------------
+       1 tBodyAcc-mean()-Z   WALKING_UPSTAIRS -0.097302002
+--------------------------------------------------------------
+       1 tBodyAcc-mean()-Z WALKING_DOWNSTAIRS -0.107566191
+--------------------------------------------------------------
+       1 tBodyAcc-mean()-Z            SITTING -0.104544182
+--------------------------------------------------------------
+       1 tBodyAcc-mean()-Z           STANDING -0.110601818
+--------------------------------------------------------------
+       1 tBodyAcc-mean()-Z             LAYING -0.113203554
+--------------------------------------------------------------
+       1  tBodyAcc-std()-X            WALKING -0.283740259
+--------------------------------------------------------------
+       1  tBodyAcc-std()-X   WALKING_UPSTAIRS -0.354708025
+--------------------------------------------------------------
+       1  tBodyAcc-std()-X WALKING_DOWNSTAIRS  0.030035338
+--------------------------------------------------------------
+       1  tBodyAcc-std()-X            SITTING -0.977229008
+--------------------------------------------------------------
+       1  tBodyAcc-std()-X           STANDING -0.995759902
+--------------------------------------------------------------
+       1  tBodyAcc-std()-X             LAYING -0.928056469
+--------------------------------------------------------------
+       1  tBodyAcc-std()-Y            WALKING  0.114461337
+--------------------------------------------------------------
+       1  tBodyAcc-std()-Y   WALKING_UPSTAIRS -0.002320265
+--------------------------------------------------------------
+       1  tBodyAcc-std()-Y WALKING_DOWNSTAIRS -0.031935943
+--------------------------------------------------------------
+       1  tBodyAcc-std()-Y            SITTING -0.922618642
+--------------------------------------------------------------
+       1  tBodyAcc-std()-Y           STANDING -0.973190056
+--------------------------------------------------------------
+       1  tBodyAcc-std()-Y             LAYING -0.836827406
+--------------------------------------------------------------
+
 
 ###Variable 1 (repeat this section for all variables in the dataset)
 Short description of what the variable describes.
