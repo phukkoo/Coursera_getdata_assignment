@@ -214,13 +214,13 @@ I have purposely put it in the following format so it is more tidy and readable.
 
 Subject     |      Measure        |   Activity      |Average
 --------------------------------------------------------------
-        1 | tBodyAcc-mean()-X |            WALKING  | 0.277330759
+   1 	 tBodyAcc-mean()-X    WALKING         0.277330759
 --------------------------------------------------------------
-        1 tBodyAcc-mean()-X   | WALKING_UPSTAIRS  | 0.255461690
+   1     tBodyAcc-mean()-X   WALKING_UPSTAIRS   0.255461690
 --------------------------------------------------------------
-        1| tBodyAcc-mean()-X| WALKING_DOWNSTAIRS|  0.289188320
+   1     tBodyAcc-mean()-X WALKING_DOWNSTAIRS  0.289188320
 --------------------------------------------------------------
-        1 | tBodyAcc-mean()-X      |       SITTING  | 0.261237565
+   1     tBodyAcc-mean()-X      SITTING         0.261237565
 --------------------------------------------------------------
         1 | tBodyAcc-mean()-X  |          STANDING |  0.278917629
 --------------------------------------------------------------
