@@ -225,7 +225,6 @@ Subject |  Measure          |  Activity      |Average
    1    | tBodyAcc-mean()-X |  STANDING         |  0.278917629
 --------------------------------------------------------------
    1    | tBodyAcc-mean()-X |   LAYING          |  0.221598244
---------------------------------------------------------------
 
 
 ###Variable 1 (repeat this section for all variables in the dataset)
