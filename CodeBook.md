@@ -6,8 +6,9 @@ date: "08/24/2015"
 
 ## Project Description
  We have been given a data set from Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 
- GetData Course project requirements.
+### GetData Course project requirements.
 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement.
@@ -16,8 +17,6 @@ date: "08/24/2015"
 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ##Study design and data processing
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
-
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
 ### For each record the following is provided:
@@ -111,15 +110,15 @@ The raw data set provided to us contains the following files.
 
 ###Guide to create the tidy data file
 
-From the requirements it is clear that we are only interested in a few of the meassurements associated with the subject ( 1- 30) and 
-activity( 1 -6).
+From the requirements it is clear that we are only interested in a few of the measurements associated with the subject (1- 30) and 
+activity(1 -6).
 The measurements that are of interest to us are those involving mean and std. The comprehensive list of all these variables is given below.
 Also the requirements of the project make it clear that only the data in the the X_test/train.txt ,subject_test/train.txt and y_test/train.txt  along with the features.txt and activity_labels.txt.
 The data in the Inertial Signals direcory that are conatined in the 9 files listed above as 128 element reading are not needed for this analysis
-The ultimate tidy_data.txt as per requirements should contain 180 observations ( ie 30 subject doing 6 activities  ) and each of them will have 68 unique mesaurements as listed below.
+The ultimate tidy_data.txt as per requirements should contain 180 observations ( ie 30 subject doing 6 activities  ) and each of them will have 66 unique mesaurements as listed below.
 This would be the wide tidy format.
-Since reading 68 colums per row is not befitting a tidy format we will melt the 68 columns into the rows where each column depicting a unique measurement will actually become a row , hence we will have a narrow tidy_data.txt with 11880 rows with 4 columns each ( Subject, Activity, Measure and value )
-The list of required features are the 68 features listed below.
+Since reading 66 colums per row is not befitting a tidy format we will melt the 66 columns into the rows where each column depicting a unique measurement will actually become a row , hence we will have a narrow tidy_data.txt with 11880 rows with 4 columns each ( Subject, Activity, Measure and value )
+The list of required features are the 66 features listed below.
 * tBodyAcc-mean()-X
 * tBodyAcc-mean()-Y
 * tBodyAcc-mean()-Z
@@ -196,8 +195,8 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
    * subject_test/train.txt ( Subject data)
    All this data from test/train will be merged to form one set of data.
 3. Meta data assocaited with the features and activities will be read features.txt and activity_labels.txt. 
-4. The readings data got from y_test/train.txt will be filtered out only to give us those reading that are associated with means and standard deviations. Hence the element( column ) size will come down from 561 to 68 
-5. I have decided to go with the feature name which have been listed above , as the descriptive variable name. The main reason being that they are quite long and have I made it more descriptive they may not be any more useful. The current feature names are not too elaborate or short and according to me serve thepurpose and are in line with the tidy data principles. 
+4. The readings data got from y_test/train.txt will be filtered out only to give us those reading that are associated with means and standard deviations. Hence the element( column ) size will come down from 561 to 66 . I have only taken into considerations those measurements that are the mean and standard deviations  for each measurement , so measurements like meanFreq() which is  Weighted average of the frequency components to obtain a mean frequency  etc are ignored.
+5. I have decided to go with the feature name which have been listed above , as the descriptive variable name, with just the basic cleanup to make the feature names compatible with the R varibale namng conventions of no special caharacters and so have removed () and replaced '-' by '_'. The main reason being that they are quite long and have I made it more descriptive they may not be any more useful. The current feature names are not too elaborate or short and according to me serve thepurpose and are in line with the tidy data principles. 
 6. Once we have the data is the above format , it is grouped_by the Subject and Activity to get the average values for the above measurements. All this is achieved by using the dplyr library . 
 7. Once 180 observation with the required num of observation are got, it is melted down using the gather function from the tidyr package to get a tidy_data txt file in the narrow format of 11880 rows X 4 columns ( Subject, Measure, ACtivity ad Value)
 
@@ -205,27 +204,13 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
 ##Description of the variables in the tiny_data.txt file
  The tidy_data.txt file is in the narrow format  and 
 * has 11880 rows X 4 columns ( Subject, Activity, Measure and Value)
-* The first column/variable is the Subject and can have values from 1 to 30
-* The second column/variable  is the  type of  Measure and could hold any of valid feature names listed above like tBodyAcc-mean()-X, fBodyBodyGyroMag-mean() etc.
+* The first column/variable is the Subject and can have values from 1 to 30. It is of type Integer .
+* The second column/variable  is the  type of  Measure and could hold any of valid feature names listed above like tBodyAcc_mean_X, fBodyGyroMag_mean etc.
+  The feature names prefixed with  'f'  indicate frequency domain signals and thoseprefixed with 't' to denote time.
 * The third column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING)
 * The last column/variable is the value of the measure specified in column 3. It depicts the average value of the measure from column 3 for that subject specified in column 1 and activity specified in column 2.
 
-I have purposely put it in the following format so it is more tidy and readable. The output looks like this
-
-
-###Variable 1 (repeat this section for all variables in the dataset)
-Short description of what the variable describes.
-
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
-
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
-
-####Notes on variable 1:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
+I have put it in the following format so it is more tidy and readable. The output looks like this
 
 ##Sources
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
@@ -234,8 +219,4 @@ DITEN - Università degli Studi di Genova.
 Via Opera Pia 11A, I-16145, Genoa, Italy.
 activityrecognition@smartlab.ws
 www.smartlab.ws
-
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
-
 
