@@ -196,7 +196,7 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
    All this data from test/train will be merged to form one set of data.
 3. Meta data assocaited with the features and activities will be read features.txt and activity_labels.txt. 
 4. The readings data got from y_test/train.txt will be filtered out only to give us those reading that are associated with means and standard deviations. Hence the element( column ) size will come down from 561 to 66 . I have only taken into considerations those measurements that are the mean and standard deviations  for each measurement , so measurements like meanFreq() which is  Weighted average of the frequency components to obtain a mean frequency  etc are ignored.
-5. I have decided to go with the feature name which have been listed above , as the descriptive variable name, with just the basic cleanup to make the feature names compatible with the R varibale namng conventions of no special caharacters and so have removed () and replaced '-' by '_'. The main reason being that they are quite long and have I made it more descriptive they may not be any more useful. The current feature names are not too elaborate or short and according to me serve thepurpose and are in line with the tidy data principles. 
+5. I have decided to go with the feature name which have been listed above , as the descriptive variable name. The main reason being that they are quite long and have I made it more descriptive they may not be any more useful. Some basic cleanup was done to make the feature names compatible with the R varibale naming conventions of no special caharacters and so have removed () and replaced '-' by '_'.Hence feature names like yBodyGyroJerkMag-std() will now look like yBodyGyroJerkMag_std .
 6. Once we have the data is the above format , it is grouped_by the Subject and Activity to get the average values for the above measurements. All this is achieved by using the dplyr library . 
 7. Once 180 observation with the required num of observation are got, it is melted down using the gather function from the tidyr package to get a tidy_data txt file in the narrow format of 11880 rows X 4 columns ( Subject, Measure, ACtivity ad Value)
 
@@ -205,10 +205,9 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
  The tidy_data.txt file is in the narrow format  and 
 * has 11880 rows X 4 columns ( Subject, Activity, Measure and Value)
 * The first column/variable is the Subject and can have values from 1 to 30. It is of type Integer .
-* The second column/variable  is the  type of  Measure and could hold any of valid feature names listed above like tBodyAcc_mean_X, fBodyGyroMag_mean etc.
-  The feature names prefixed with  'f'  indicate frequency domain signals and thoseprefixed with 't' to denote time.
-* The third column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING)
-* The last column/variable is the value of the measure specified in column 3. It depicts the average value of the measure from column 3 for that subject specified in column 1 and activity specified in column 2.
+* The second column/variable  is the  type of  Measure and could hold any of valid feature names listed above like tBodyAcc_mean_X, fBodyGyroMag_mean etc. These are of type factor since they can have only some fixed values. The feature names prefixed with  'f'  indicate frequency domain signals and those prefixed with 't' to denote time.
+* The third column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING). This too is of type factor.
+* The last column/variable is the value of the measure specified in column 3. It depicts the average value of the measure from column 3 for that subject specified in column 1 and activity specified in column 2.This has type numeric.
 
 I have put it in the following format so it is more tidy and readable. The output looks like this
 
