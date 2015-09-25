@@ -28,5 +28,5 @@ Repositoty contains peer-assessed Coursera's Getting-and-Cleaning-Data Course Pr
     Since reading 68 columns my be a bit messy, will tidy this further by gathering(melting) the 66 columns to rows hence Reshaping wide format to long narrow format.
     The gather() function will take multiple columns and collapse them into key-value pairs, duplicating all other columns as needed.
     * gathered is used to change from wide to narrow format . This results in a dataframe of 11880 rows X 4 columns.
-    * then rearranging coumns so we see Subject, Measurement , Activity and Value.
+    * then rearranging columns so we see Subject, Measurement , Activity and Value.
 12. Uses `write.table` to save the final tidy dataset as a CSV file names ./data/tidydata.txt. File can be read back with `read.table("./data/tidydata.txt")`
