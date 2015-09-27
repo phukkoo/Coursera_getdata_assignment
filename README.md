@@ -24,7 +24,7 @@ Repository contains peer-assessed Coursera's Getting-and-Cleaning-Data Course Pr
     * grouped the above data frame using grouped_by ( subject, activity)
     * Then in each of the resulting groups find the average of the variables by using summarize on the mean funtion for all the measaurement variables.
     
-11. This will result n 180 rows of observation with 68 columns. ( 30 subjects times 6 activities and 66 measurements).
+11. This will result in 180 rows of observation with 68 columns. ( 30 subjects times 6 activities and 66 measurements).
     Since reading 68 columns may be a bit messy, I tidied this further by gathering(melting) the 66 columns to rows hence reshaping from  wide format to long narrow format.
     The gather() function will take multiple columns and collapse them into key-value pairs, duplicating all other columns as needed.
     * gathered is used to change from wide to narrow format . This results in a dataframe of 11880 rows X 4 columns.
