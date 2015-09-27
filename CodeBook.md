@@ -118,7 +118,7 @@ Also the requirements of the project make it clear that only the data in the the
 **The data in the Inertial Signals direcory that are contained in the 9 axial files  as 128 element readings are not needed for this analysis**
 The ultimate tidy_data.txt as per requirements should contain 180 observations ( ie 30 subject doing 6 activities  ) and each of them will have 66 unique mesaurements as listed below.
 This would be the wide tidy format.
-Since reading 66 colums per row is not befitting a tidy format we will melt the 66 columns into the rows where each column depicting a unique measurement will actually become a row , hence we will have a ** narrow tidy_data.txt with 11880 rows with 4 columns each ( Subject, Activity, Measure and value ) **
+Since reading 66 colums per row is not befitting a tidy format we will melt the 66 columns into the rows where each column depicting a unique measurement will actually become a row , hence we will have a **narrow tidy_data.txt with 11880 rows with 4 columns each ( Subject, Activity, Measure and value )**
 The list of required features are the 66 features listed below.
 * tBodyAcc-mean()-X
 * tBodyAcc-mean()-Y
