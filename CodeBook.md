@@ -206,7 +206,7 @@ In order to process the data and get the required tidy_data.txt as the outcome ,
  The tidy_data.txt file is in the narrow format  and 
 * has 11880 rows X 4 columns ( Subject, Activity, Measure and Value)
 * The first column/variable is the Subject and can have values from 1 to 30. It is of type Integer .
-* The second column/variable  is the  type of  Measure and could hold any of valid feature names listed above like tBodyAcc_mean_X, fBodyGyroMag_mean etc. These are of type factor since they can have only some fixed values. The feature names prefixed with  'f'  indicate frequency domain signals and those prefixed with 't' to denote time.
+* The second column/variable  is the  type of  Measure and could hold any of valid feature names listed above like tBodyAcc_mean_X, fBodyGyroMag_mean etc. These are of type factor since they can have only some fixed values. The feature names prefixed with  'f'  indicate frequency domain signals and those prefixed with 't' to denote time. Measurements ending in _X, _Y , _Z correspond to the X, Y, Z axial measurements respectively.
 * The third column/variable  is the activity and can have the followig values (WALKING, WALKING_UP, WALKING_DOWN, SITTING, STANDING, LAYING). This too is of type factor.
 * The last column/variable is the value of the measure specified in column 3. It depicts the average value of the measure from column 3 for that subject specified in column 1 and activity specified in column 2.This has type numeric.
 
