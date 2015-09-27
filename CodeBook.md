@@ -106,6 +106,7 @@ The raw data set provided to us contains the following files.
 * 'test/Inertial Signals/total_acc_x_test.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_test.txt' and 'total_acc_z_test.txt' files for the Y and Z axis.
 * 'test/Inertial Signals/body_acc_x_test.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration.  THis has standard gravity units 'g'.Every row shows a 128 element vector. The same description applies for the 'body_acc_x_test.txt' and 'body_acc_z_test.txt' files for the Y and Z axis.
 * 'test/Inertial Signals/body_gyro_x_test.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. The same description applies for the body_gyro_z_test.txt and body_gyro_y_test.txt.
+
 ##Creating the tidy datafile
 
 ###Guide to create the tidy data file
@@ -113,7 +114,7 @@ The raw data set provided to us contains the following files.
 From the requirements it is clear that we are only interested in a few of the measurements associated with the subject (1- 30) and 
 activity(1 -6).
 The measurements that are of interest to us are those involving mean and std. The comprehensive list of all these variables is given below.
-Also the requirements of the project make it clear that only the data in the the X_test/train.txt ,subject_test/train.txt and y_test/train.txt  along with the features.txt and activity_labels.txt.
+Also the requirements of the project make it clear that only the data in the the X_test.txt , X_train.txt ,subject_test.txt, subject_train.txt and y_test.txt y_train.txt  along with the features.txt and activity_labels.txt.
 The data in the Inertial Signals direcory that are conatined in the 9 files listed above as 128 element reading are not needed for this analysis
 The ultimate tidy_data.txt as per requirements should contain 180 observations ( ie 30 subject doing 6 activities  ) and each of them will have 66 unique mesaurements as listed below.
 This would be the wide tidy format.
