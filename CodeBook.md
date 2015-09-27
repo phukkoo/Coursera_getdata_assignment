@@ -115,7 +115,7 @@ From the requirements it is clear that we are only interested in a few of the me
 activity(1 -6).
 The measurements that are of interest to us are those involving mean and std. The comprehensive list of all these variables is given below.
 Also the requirements of the project make it clear that only the data in the the X_test.txt , X_train.txt ,subject_test.txt, subject_train.txt and y_test.txt y_train.txt  along with the features.txt and activity_labels.txt.
-**The data in the Inertial Signals direcory that are contained in the 9 axial files  as 128 element readings are not needed for this analysis
+**The data in the Inertial Signals direcory that are contained in the 9 axial files  as 128 element readings are not needed for this analysis**
 The ultimate tidy_data.txt as per requirements should contain 180 observations ( ie 30 subject doing 6 activities  ) and each of them will have 66 unique mesaurements as listed below.
 This would be the wide tidy format.
 Since reading 66 colums per row is not befitting a tidy format we will melt the 66 columns into the rows where each column depicting a unique measurement will actually become a row , hence we will have a narrow tidy_data.txt with 11880 rows with 4 columns each ( Subject, Activity, Measure and value )
